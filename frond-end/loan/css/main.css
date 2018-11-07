@@ -1,0 +1,313 @@
+/*.fa{z-index: 10}*/
+.flow-img {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+    z-index: 99;
+}
+.flow-img img{
+	float: right;
+}
+.pipe{ padding:0 10px;}
+.navBox-main li.nav-btn span:first-child{ cursor: pointer;}
+
+@font-face {font-family: "iconfont";
+  src: url('../common/fonts/iconfont.eot'); /* IE9*/
+  src: url('../common/fonts/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../common/fonts/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../common/fonts/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../common/fonts/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+  
+}
+.icon-baobiaojishichaxun:before { content: "\e610"; }
+.icon-icon05:before { content: "\e603"; }
+.icon-daihoucuishou:before { content: "\e604"; }
+.icon-jinru:before { content: "\e60f"; }
+.icon-zhuxiao:before { content: "\e60b"; }
+.icon-tiwen:before { content: "\e60e"; }
+
+.icon-shangjia:before { content: "\e611"; }          /*閺夌儑绠戦弲銏㈢不閿涘嫭鍊� */
+.icon-renwu:before{ content: "\e60f"; }              /*闁瑰瓨鍨瑰▓鎴炵鐠囨彃顫� */
+.icon-bandiyashouxu:before { content: "\e60c"; }      /*閻犳劘娓归懙鎴犵不閿涘嫭鍊� */
+.icon-baoxian:before { content: "\e609"; }             /*濞ｅ洦绻堝▍鎾剁不閿涘嫭鍊� */
+.icon-baobiaochaxun:before { content: "\e607"; }      /*闁硅翰鍎撮妴鍐蓟閵夘煈鍤� */
+.icon-ershouche:before { content: "\e60a"; }           /*濞存粌鏈晶婊勬姜閿旂虎鍚�闁荤儑鎷� */
+.icon-zhichi:before { content: "\e605"; }               /*闁革负鍔庨崵搴ㄥ绩椤栨稑鐦�*/
+.icon-kehuguanli:before { content: "\e610"; }           /*閻庡箍鍨洪崺娑氱不閿涘嫭鍊� */
+.icon-shenpi:before { content: "\e60e"; }               /*閻犳劕鍢叉晶鐘电不閿涘嫭鍊� */
+.icon-tubiao12:before { content: "\e608"; }             /*閻犙冨妤犲洭宕犻崨顖ｅ悁闁荤儑鎷� */
+.icon-chuandi:before { content: "\e60b"; }              /*闁哄倸娲﹂妴鍌涘閻樹紮鎷烽幒鏃戝悁闁荤儑鎷� */
+/*add*/
+.icon-gps:before { content: "\e606"; }                  /*GPS閺夆晜鐩弨銏拷娑欘焽椤撴悂鎮堕敓锟�*/
+.icon-cwgl:before { content: "\e604"; }                 /*閻犳劑鍨规慨鐔虹不閿涘嫭鍊�*/
+.icon-bxff:before { content: "\e601"; }                 /*濞ｅ洦绻堝▍鎾诲礆閸℃绲�*/
+.icon-tbgl:before { content: "\e600"; }                 /*闁硅埖娲戠换姘辩不閿涘嫭鍊�*/
+.icon-discountPolicyManag:before { content: "\e612"; } /*閻犳劕鐡ㄦ导鍛村绩鐠恒劎鎽滅紒鐙呯磿閹拷*/
+.icon-postloanManage:before{ content: "\e60d"}         /*閻犳劕鍢查幃妤冪不閿涘嫭鍊� */
+.icon-loanSettlementList:before{ content: "\e603"}     /*缂備焦鎸荤粩鑽ょ不閿涘嫭鍊� */
+.icon-feeManage:before{ content: "\e602"}               /*閻犳劕婀遍弫銈囩不閿涘嫭鍊� */
+.icon-gpsguanli:before { content: "\e606"; }                  /*GPS缁狅紕鎮�*/
+
+
+.nav_title {
+	margin-left: 30px;
+	font-size: 22px;
+	color: #404040;
+	float: left;
+	position: relative;
+	top: 16px;
+}
+
+.navBox-main {
+	margin-top: 26px;
+}
+
+.navBox-main li {
+	float: left;
+	height: 36px;
+	line-height: 36px;
+	padding: 0 19px;
+}
+
+.navBox-main li:first-child {
+	border-right: 1px solid #d9d9d9;
+	padding-right: 38px;
+	margin-right: 19px;
+}
+
+.navBox-main li #userName {
+	font-weight: bold;
+}
+
+.navBox-main li[for='01'] {
+	padding-left: 40px;
+	background: url(../images/common_ic.png) no-repeat -4px -11px
+}
+
+.navBox-main li[for='02'] {
+	padding-left: 40px;
+	background: url(../images/common_ic.png) no-repeat -6px -67px
+}
+
+.navBox-main li[for='03'] {
+	padding-left: 40px;
+	background: url(../images/common_ic.png) no-repeat -4px -119px
+}
+
+.fa {
+	font-size: 15px;
+}
+label.error {
+	display: table-row-group;
+}
+
+.score{
+	width:178px;
+	height:160px;
+	background: url(../images/score_bg.png) no-repeat;
+	position:absolute;
+	top:0;
+	left: 0;
+	margin:155px 0 0 0;
+	margin-left: 25%;
+	display: none;
+}
+
+.score[fors='01']{
+	background-position: -9px -329px;
+}
+
+.score[fors='02']{
+	background-position: -9px -168px;
+}
+
+.score[fors='03']{
+	background-position: -9px -8px;
+}
+
+.score span{
+	font-size: 18px; color:#fff;text-align: center; display: block;margin-top:40px;
+}
+
+.score p{
+	font-size: 50px; color:#fff;text-align: center; display: block;
+}
+.section-title{
+	border-bottom: 1px solid #999;
+	height: 2em;
+	line-height: 2em;
+	padding: 0 2px;
+	margin: 20px auto;
+	font-size: 14px;
+}
+
+.navbar{
+	margin-bottom: 10px;
+}
+
+.navBox-main{
+	margin-top: 15px; 
+}
+
+/*閺夌儑绠戦弲銏㈡嫚閸曨偄鐎�*/
+#score .title{
+	font-size: 18px;
+	font-weight: normal;
+	color:#808080;
+}
+.scoreArea .part{
+	border-radius: 6px;
+	overflow: hidden;
+	text-align: center;
+	height: 120px;
+	background-color: #3598db;
+}
+.scoreArea .part.a{
+	background-color:#40cbff;
+}
+.scoreArea .part.zh_score.a .level{
+	color:#40cbff
+}
+.scoreArea .part.b{
+	background-color:#9cd159;
+}
+.scoreArea .part.zh_score.b .level{
+	color:#9cd159;
+}
+.scoreArea .part.c{
+	background-color:#ff5757;
+}
+.scoreArea .part.zh_score.c .level{
+	color:#ff5757;
+}
+.scoreArea .part.d{
+	background-color:#808080;
+}
+.scoreArea .part.zh_score.d .level{
+	color:#808080;
+}
+.scoreArea .s_header{
+	width: 100%;
+	font-size: 14px;
+	color: #fff;
+	background-color:rgba(255,255,255,.2);
+	height: 40px;
+	line-height: 40px;
+}
+.scoreArea .s_body{
+	width: 100%;
+	font-size: 18px;
+	color: #fff;
+	height: 50px;
+	line-height: 50px;
+}
+.scoreArea .s_footer{
+	width: 100%;
+	font-size: 12px;
+	color: #fff;
+	background-color:rgba(255,255,255,.1);
+	height: 30px;
+	line-height: 30px;
+}
+.scoreArea .level{
+	font-size: 24px;
+	display: inline-block;
+}
+.scoreArea .point{
+	font-size: 30px;
+	display: inline-block;
+}
+.scoreArea .zh_score .s_body{
+	height: 80px;
+	line-height: 30px;
+}
+.scoreArea .zh_score .s_body .level{
+	display: inline-block;
+	background-color: #fff;
+	color: #40cbff;
+	width: 30px;
+	height: 30px;
+	border-radius: 100%;
+	margin-top: 25px;
+}
+.scoreArea .score_tip{
+	font-size: 15px;
+	width: 20px;
+	display: inline-block;
+	text-align: center;
+	margin-top: 20px;
+	margin-right: 15px;
+}
+.scoreArea .score_tip.a{
+	border-top: 80px solid #40cbff;
+	margin-left: 20px;
+}
+.scoreArea .score_tip.b{
+	border-top: 80px solid #9cd159;
+}
+.scoreArea .score_tip.c{
+	border-top: 80px solid #ff5757;
+}
+
+.flow-isShowImg{
+	position: absolute;
+	top:26px;
+	z-index: 1;
+}
+.isShowImg {
+	background: url("../images/icon_user.png") no-repeat 0 0;
+	width: 140px;
+	height: 30px;
+	padding:1px 0 0 25px;
+	line-height: 26px;
+	text-align: center;
+	color:#fff;
+	display: inline-block;
+	vertical-align: middle;
+	margin-left: 5px;
+	background-size:140px 60px;
+}
+#isMaritalStatus{ background-position: 0 -31px;}
+#isHousingStatus{ background-position: 0 -31px;}
+#isMobilePhone{ background-position: 0 -31px;}
+#dealerTry{ background-position: 0 -31px;}
+.printTable{
+	background: url("../images/icon_print.png") no-repeat 12px center;
+	padding:6px 5px 6px 30px;
+}
+
+.nav-tabs #printBtn:active, .nav-tabs #printBtn:hover{
+	background: url("../images/icon_print.png") no-repeat 12px center;
+}
+.self_layout{
+	position:absolute;
+	top:20%;
+	right:5%;
+}
+.layui-badge-lz{
+	background-color: #fb5a56;
+	padding: 0 10px;
+	height: 20px;
+	line-height: 20px;
+	border-radius: 10px;
+}
+/*拆单标签的样式*/
+.self_common_sponseName{
+	color:red; 
+	display:inline-block; 
+	margin-right:24px;
+}
+/*通融单标签的样式*/
+.self_common_accommodateTypePrompt{
+	color:red; 
+	display: inline-block;
+}

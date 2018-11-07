@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A4E7BD3-B3E3-4308-8CD3-40D52D5F9CE0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>KPI.Domain</RootNamespace>
+    <AssemblyName>KPI.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\KPI.web\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\KPI.Web\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="01 Infrastructure\ICreationAuditedEx.cs" />
+    <Compile Include="01 Infrastructure\ICreationAudited.cs" />
+    <Compile Include="01 Infrastructure\IDeleteAuditedEx.cs" />
+    <Compile Include="01 Infrastructure\IDeleteAudited.cs" />
+    <Compile Include="01 Infrastructure\IEntityEx.cs" />
+    <Compile Include="01 Infrastructure\IEntity.cs" />
+    <Compile Include="01 Infrastructure\IModificationAuditedEx.cs" />
+    <Compile Include="01 Infrastructure\IModificationAudited.cs" />
+    <Compile Include="02 ViewModel\AssessmentTempleteResultModel.cs" />
+    <Compile Include="02 ViewModel\AssessmentIndicatorsValueModel.cs" />
+    <Compile Include="02 ViewModel\BranchCooperateBankTaskDetailOverviewModel.cs" />
+    <Compile Include="02 ViewModel\BranchFinancialProductTaskDetailOverviewModel.cs" />
+    <Compile Include="02 ViewModel\CheckerModel.cs" />
+    <Compile Include="02 ViewModel\PersonalAssessmentDetailOverviewModel.cs" />
+    <Compile Include="02 ViewModel\BranchAssessmentDetailOverviewModel.cs" />
+    <Compile Include="02 ViewModel\AuthorizeActionModel.cs" />
+    <Compile Include="02 ViewModel\AssessmentOverviewModel.cs" />
+    <Compile Include="02 ViewModel\DimensionDetailOverviewModel.cs" />
+    <Compile Include="02 ViewModel\TaskMode.cs" />
+    <Compile Include="02 ViewModel\TaskOverviewModel.cs" />
+    <Compile Include="02 ViewModel\YearlyTaskDetailOverviewModel.cs" />
+    <Compile Include="02 ViewModel\TempleteOverviewModel.cs" />
+    <Compile Include="03 Entity\AssessmentManage\AssessmentDetailEntity.cs" />
+    <Compile Include="03 Entity\AssessmentManage\AssessmentResultCountEntity.cs" />
+    <Compile Include="03 Entity\AssessmentManage\AssessmentResultEntity.cs" />
+    <Compile Include="03 Entity\AssessmentManage\AssessmentEntity.cs" />
+    <Compile Include="03 Entity\IndicatorManage\CheckMethodEntity.cs" />
+    <Compile Include="03 Entity\IndicatorManage\DimensionDetailEntity.cs" />
+    <Compile Include="03 Entity\IndicatorManage\DimensionEntity.cs" />
+    <Compile Include="03 Entity\IndicatorManage\IndicatorsDefineEntity.cs" />
+    <Compile Include="03 Entity\IndicatorManage\IndicatorsCountMethodEntity.cs" />
+    <Compile Include="03 Entity\IndicatorManage\IndicatorsFormuleEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\AreaEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\ItemsDetailEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\ItemsEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\ModuleButtonEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\ModuleEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\OrganizeEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\RoleAuthorizeEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\RoleEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\UserEntity.cs" />
+    <Compile Include="03 Entity\SystemManage\UserLogOnEntity.cs" />
+    <Compile Include="03 Entity\SystemSecurity\DbBackupEntity.cs" />
+    <Compile Include="03 Entity\SystemSecurity\FilterIPEntity.cs" />
+    <Compile Include="03 Entity\SystemSecurity\LogEntity.cs" />
+    <Compile Include="03 Entity\TaskManage\SelfTaskDetailEntity.cs" />
+    <Compile Include="03 Entity\TaskManage\BranchFinancialProductTaskDetailEntity.cs" />
+    <Compile Include="03 Entity\TaskManage\BranchCooperateBankTaskDetailEntity.cs" />
+    <Compile Include="03 Entity\TaskManage\YearlyTaskDetailEntity.cs" />
+    <Compile Include="03 Entity\TaskManage\TaskDistributionEntity.cs" />
+    <Compile Include="03 Entity\TempleteManage\TempleteCheckEntity.cs" />
+    <Compile Include="03 Entity\TempleteManage\TempleteCompostionEntity.cs" />
+    <Compile Include="03 Entity\TempleteManage\TempleteEntity.cs" />
+    <Compile Include="04 IRepository\AssessmentManage\IAssessmentDetailRepository.cs" />
+    <Compile Include="04 IRepository\AssessmentManage\IAssessmentResultCountRepository.cs" />
+    <Compile Include="04 IRepository\AssessmentManage\IAssessmentResultRepository.cs" />
+    <Compile Include="04 IRepository\AssessmentManage\IAssessmentRepository.cs" />
+    <Compile Include="04 IRepository\IndicatorManage\IDimensionDetailRepository.cs" />
+    <Compile Include="04 IRepository\IndicatorManage\IDimensionRepository.cs" />
+    <Compile Include="04 IRepository\IndicatorManage\IIndicatorsDefineRepository.cs" />
+    <Compile Include="04 IRepository\IndicatorManage\ICheckMethodRepository.cs" />
+    <Compile Include="04 IRepository\IndicatorManage\IIndicatorsCountMethodRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IAreaRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IItemsDetailRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IItemsRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IModuleButtonRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IModuleRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IOrganizeRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IRoleAuthorizeRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IRoleRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IUserLogOnRepository.cs" />
+    <Compile Include="04 IRepository\SystemManage\IUserRepository.cs" />
+    <Compile Include="04 IRepository\SystemSecurity\IDbBackupRepository.cs" />
+    <Compile Include="04 IRepository\SystemSecurity\IFilterIPRepository.cs" />
+    <Compile Include="04 IRepository\SystemSecurity\ILogRepository.cs" />
+    <Compile Include="04 IRepository\TaskManage\ISelfTaskDetailRepository.cs" />
+    <Compile Include="04 IRepository\TaskManage\ITaskDistributionRepository.cs" />
+    <Compile Include="04 IRepository\TaskManage\IBranchCooperateBankTaskDetailRepository.cs" />
+    <Compile Include="04 IRepository\TaskManage\IBranchFinancialProductTaskDetailRepository.cs" />
+    <Compile Include="04 IRepository\TaskManage\IYearlyTaskDetailRepository.cs" />
+    <Compile Include="04 IRepository\TempleteManage\ITempleteCheckRepository.cs" />
+    <Compile Include="04 IRepository\TempleteManage\ITempleteCompostionRepository.cs" />
+    <Compile Include="04 IRepository\TempleteManage\ITempleteRepository.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KPI.Code\KPI.Code.csproj">
+      <Project>{a23199c4-a688-43fb-986d-d3337c42620f}</Project>
+      <Name>KPI.Code</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KPI.Data\KPI.Data.csproj">
+      <Project>{62579b3d-4b7e-4996-80e2-dc9611ce9eaa}</Project>
+      <Name>KPI.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

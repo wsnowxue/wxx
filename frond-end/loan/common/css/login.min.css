@@ -1,0 +1,189 @@
+html {
+	height: 100%;
+	background: #242f39;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+	-webkit-text-fill-color: #333;
+}
+
+.navbar {
+	min-width: 1170px;
+	background: #242f39;
+	color: #d4d4d4;
+	height: 70px;
+}
+
+.container {
+	width: 1170px;
+	margin: 0 auto;
+}
+
+.navbar img {
+	margin: 6% 0;
+}
+
+.navbar span {
+	font-size: 16px;
+	height: 70px;
+	line-height: 70px;
+}
+
+.navbar span.logo_ms {
+	margin-left: 15px;
+}
+
+.signin {
+	min-width: 1170px;
+	position: absolute;
+	width: 100%;
+	top: 70px;
+	bottom: 0px;
+	background: url(../../images/login-background.jpg) no-repeat center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	background-position: 0 70px;
+}
+
+.signinpanel {
+	width: 1170px;
+	margin: 15% auto 0 auto
+}
+
+.signinpanel img {
+	margin: 10% 0 0 0;
+}
+
+.signinpanel .logopanel {
+	float: none;
+	width: auto;
+	padding: 0;
+	background: 0 0
+}
+
+.signinpanel .signin-info ul {
+	list-style: none;
+	padding: 0;
+	margin: 20px 0
+}
+
+.signinpanel .form-control {
+	display: block;
+	margin-top: 25px
+}
+
+.signinpanel .uname {
+	color: #333;
+	padding-left: 53px;
+	background-color: #FFFFFF !important;
+}
+
+.signinpanel .pword {
+	color: #333;
+	padding-left: 53px;
+	background-color: #FFFFFF !important;
+}
+
+.signinpanel .btn {
+	margin-top: 15px
+}
+
+.signinpanel .no-margins {
+	text-align: center;
+	font-size: 16px;
+	color: #fff;
+}
+
+.signinpanel form {
+	background: rgba(0, 0, 0, .2);
+	padding: 30px
+}
+
+.signinpanel form i {
+	float: left;
+	background: url(../../images/login_ic.png) no-repeat;
+	height: 17px;
+	background-position: -1px -4px;
+	margin-right: 10px;
+	cursor: pointer;
+	padding-left: 27px;
+	font-size: 14px;
+	color:#d9d9d9;
+	font-style: normal;
+}
+
+.signinpanel form i.cancel {
+	background-position: -1px -34px;
+}
+
+.signinpanel form .check {
+	color: #c7c6c6;
+	display: inline-table;
+}
+
+.signinpanel form input {
+	height: 40px;
+}
+
+.signinpanel form button {
+	background: #12ac8d;
+	height: 40px;
+	border: none;
+}
+
+.signinpanel form button:hover,
+.signinpanel form button:focus {
+	background: #3ad2b3;
+}
+
+.signinpanel form span {
+	float: right;
+	background: url(../../images/login_ic.png) no-repeat;
+	position: absolute;
+	background-position: -29px -73px;
+	width: 71px;
+	height: 71px;
+	top: 0;
+	right: 0;
+	margin-right: 15px;
+	cursor: pointer;
+}
+
+.signinpanel form em {
+	position: absolute;
+	width: 41px;
+	height: 40px;
+	margin-top: 25px;
+}
+
+.signinpanel form em.name {
+	background: url(../../images/login_01.jpg) no-repeat left center;
+}
+
+.signinpanel form em.pwd {
+	background: url(../../images/login_02.jpg) no-repeat left center;
+}
+
+.signinpanel form span.code {
+	background-position: -29px -150px;
+}
+
+.signinpanel form .codeBox img {
+	width: 139px;
+	margin: 18% 27% 0 27%;
+}
+
+.signinpanel form .codeBox p {
+	font-size: 14px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	margin: 20px 0 25px 0;
+}
+
+
+/*@media screen and (max-width:768px) {.signinpanel,.signuppanel {margin: 0 auto;width: 420px!important;padding: 20px}.signinpanel form {margin-top: 20px}.signup-footer {margin-bottom: 10px}.signuppanel .form-control {margin-bottom: 10px}.signup-footer .pull-left,.signup-footer .pull-right {float: none!important;text-align: center}.signinpanel .signin-info ul {display: none}}@media screen and (max-width:320px) {.signinpanel,.signuppanel {margin: 0 20px;width: auto}}*/

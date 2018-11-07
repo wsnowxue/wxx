@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Expires" CONTENT="0">
+    <meta http-equiv="Cache-Control" CONTENT="no-cache">
+    <meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    <link rel="stylesheet"
+          href="../../../common/plugs/bootstrap-3.3.5/css/bootstrap.min.css?rev=5d5357cb3704e1f43a1f5bfed2aebf42"/>
+    <link rel="stylesheet" href="../../../common/css/font-awesome.min.css?rev=8d95367fd02b00d9709e57d1b045f337"/>
+    <link rel="stylesheet" href="../../../common/css/style.min.css?rev=686a8d04e128e38d813d277cae98f61d"/>
+    <link rel="stylesheet" href="../../../css/main.css?rev=1452688952666"/>
+
+    <title>我的任务</title>
+    <style type="text/css">
+
+        .sidebar-nav ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .sidebar-nav .metismenu {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+        }
+
+        .sidebar-nav .metismenu > li {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .sidebar-nav .metismenu a {
+            position: relative;
+            display: block;
+            padding: 5px 15px;
+            color: #666666;
+            outline-width: 0;
+            transition: all .3s ease-out;
+            font-size: 14px;
+        }
+
+        .sidebar-nav .metismenu ul a {
+            padding: 5px 15px 5px 30px;
+        }
+
+        .sidebar-nav .metismenu ul ul a {
+            padding: 5px 15px 5px 45px;
+        }
+
+        .sidebar-nav .metismenu a:hover,
+        .sidebar-nav .metismenu a:focus,
+        .sidebar-nav .metismenu a:active {
+            color: #ff5a37;
+        }
+
+        .fff3333 {
+            color: #ff3333;
+        }
+        .wrapper-content{
+            padding:0 15px
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper wrapper-content animated fadeInRight">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="sidebar-nav">
+                <ul class="metismenu" id="menu1">
+                    <!-- 填坑 -->
+                </ul>
+            </nav>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <nav class="sidebar-nav">
+                <ul class="metismenu" id="menu2">
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div>
+</body>
+<script src="../../../common/js/jquery-2.1.1.min.js?rev=6631a779321bc03f4a5281d3ff526254"></script>
+<script src="../../../common/plugs/bootstrap-3.3.5/js/bootstrap.min.js?rev=4becdc9104623e891fbb9d38bba01be4"></script>
+<script src="../../../common/plugs/bootstrap-table/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
+<script src="../../../common/plugs/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+<script src="../../../common/plugs/jquery-toastr/js/toastr.min.js"></script>
+<script src="../../../common/js/jquery.metisMenu.js?rev=596f5abcac8359e9cb8046b69278e5ff"></script>
+<script src="../../../common/js/jquery.slimscroll.min.js?rev=db59b66b91ac5999f3502d2fd88c37da"></script>
+
+<script type="text/javascript" charset="utf-8">
+    $(function () {
+        $('#menu1').metisMenu();
+        $('#menu2').metisMenu();
+    });
+</script>
+
+<script type="text/javascript" charset="utf-8">
+    $("head").append([
+        '<script src="../../../js/task/myTask/sso_test.js"><\/script>'
+    ].join(""));
+</script>
+</html>

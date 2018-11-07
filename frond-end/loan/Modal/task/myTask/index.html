@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="Expires" CONTENT="0">
+		<meta http-equiv="Cache-Control" CONTENT="no-cache">
+		<meta http-equiv="Pragma" CONTENT="no-cache">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="../../../common/plugs/bootstrap-3.3.5/css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="../../../common/css/style.min.css"/>
+		<link rel="stylesheet" href="../../../common/plugs/layer/skin/layer.css?rev=433a1dd8df8c4851be764e907f6d758a"/>
+		<link rel="stylesheet" href="../../../common/plugs/bootstrap-table/dist/bootstrap-table.min.css">
+		<title>我的任务</title>
+	</head>
+	<body class="gray-bg">
+	  <div class="wrapper wrapper-content animated fadeInRight">
+	  	<div class="row">
+	  		<div class="col-xs-24 col-sm-24 col-md-24">
+	  			<div id="mainDivId">
+	  				<span id="mainSpanId" style="color:#33CCFF;font-weight:bold;"></span>
+	  			</div>
+	  			<div class="ibox float-e-margins">
+	  				<div class="ibox-content">
+	  					<form class="form-horizontal" id="taskForm">
+	  						<div class="form-group form-group-sm">
+	  							<div class="input-tip">
+	  								<label class="col-xs-3 col-sm-3 col-md-3 control-label">流程名称：</label>
+	  								<div class="col-xs-5 col-sm-5 col-md-5">
+	  									<select name="ftCode" id="ftCode" class="form-control">
+	  										<option value="" selected>--请选择--</option>
+	  									</select>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<div class="form-group form-group-sm">
+	  							<div class="input-tip">
+	  								<label class="col-xs-3 col-sm-3 col-md-3 control-label">节点名称：</label>
+	  								<div class="col-xs-5 col-sm-5 col-md-5">
+	  									<select name='flowNode' id='flowNode' class="form-control">
+	  										<option value="" selected>--请选择--</option>
+	  									</select>
+	  								</div>
+	  							</div>
+	  						</div>
+	  						<div class="form-group form-group-sm">
+	  							<div class="col-xs-24 col-sm-24 col-md-24 text-center">
+	  								<button type="button" class="btn btn-primary" id="btn-search" modal="enter"><span class="glyphicon glyphicon-search"></span><span>&nbsp;查询&nbsp;</span>
+	  								</button>
+	  								<button type="button" class="btn btn-white" modal="reset"><span class="glyphicon glyphicon-remove"></span><span>&nbsp;清除查询条件&nbsp;</span>
+	  								</button>
+	  							</div>
+	  						</div>
+	  					</form>
+	  				</div>
+	  			</div>
+	  			<div class="ibox float-e-margins">
+	  				<div class="ibox-content">
+	  					<ul class="nav nav-tabs">
+	  						<li class="active"><a href="#todo" data-toggle="tab">待办事项</a></li>
+	  					</ul>
+	  					<div class="tab-content">
+	  						<p></p>
+	  						<div id="todo" class="tab-pane active">
+	  							<table id="table1" data-toggle="table" data-ajax="table_1" data-cookie="true" data-cookie-id-table="saveId" data-show-columns="true">
+	  								<!--代办数据展现区 -->
+	  								<thead>
+	  									<tr>
+	  										<th data-field="businessTypeName">流程名称</th>
+	  										<th data-field="businessNum" data-formatter="businessNum">业务编号</th>
+	  										<th data-field="currentNodeKey" data-switchable="false" data-formatter="handle_1" data-events="tableEvent_1" data-width="auto">操作</th>
+	  									</tr>
+	  								</thead>
+	  							</table>
+	  						</div>
+	  					</div>
+	  					<div id="toolbar"></div>
+	  				</div>
+	  			</div>
+	  		</div>
+	  	</div>
+	  </div>
+    
+    
+    
+	  <script src="../../../common/js/jquery-2.1.1.min.js?rev=6631a779321bc03f4a5281d3ff526254"></script>
+	  <script src="../../../common/plugs/bootstrap-3.3.5/js/bootstrap.min.js?rev=4becdc9104623e891fbb9d38bba01be4"></script>
+	  <script src="../../../common/plugs/layer/layer.js?rev=8962f047eeb03c06cf8200de1bf8ab99"></script>
+	  <script src="../../../common/js/mock.js"></script>
+	  <script src="../../../common/js/jquery.values.js"></script>
+	  <script src="../../../common/plugs/bootstrap-table/dist/bootstrap-table.min.js"></script>
+	  <script src="../../../common/plugs/bootstrap-table/dist/extensions/cookie/bootstrap-table-cookie.min.js"></script>
+	  <script src="../../../common/plugs/bootstrap-table/dist/locale/bootstrap-table-zh-CN.min.js"></script>
+    
+	  <script type="text/javascript" charset="utf-8">
+	  	$("head").append([
+	  	'<script src="../../../common/js/iframeCommon.js"><\/script>',
+	  	'<script src="../../../js/task/myTask/index.js"><\/script>'
+	  	].join(""));
+	  </script>
+	</body>
+</html>

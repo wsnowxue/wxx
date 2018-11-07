@@ -1,0 +1,217 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Index.cshtml";
+}
+<link href="~/Content/js/uploadify/uploadify.extension.css" rel="stylesheet" />
+<link href="~/Content/js/uploadify/uploadify.css" rel="stylesheet" />
+<script src="~/Content/js/uploadify/jquery.uploadify.min.js"></script>
+<script src="~/Content/js/uploadify/jquery.uploadify.js"></script>
+
+<script type="text/javascript">
+    var isCanImport = true;
+    var importType = $.request("importType");
+    var upFilepath = "";
+    $(function () {
+        gridList();
+        //上传按钮
+        $("#uploadify").uploadify({
+            
+            method: 'post',
+            uploader: '/Upload/UploadifyFile',
+            swf: '/Content/js/uploadify/uploadify.swf',
+            cancelImg: '/Content/js/uploadify/uploadify-cancel.png',
+            buttonText: "浏览",
+            height: 30,
+            width: 60,
+            fileTypeExts: '*.xls; *.xlsx;',
+            removeCompleted: true,
+            removeTimeout: 1,
+            onUploadStart: function (file) {
+                alert('Starting to upload ' + file.name);
+                //console.log(123)
+                alert("XXX");
+                //var keyValue = "";
+                //var strMsg = "";
+                //switch (parseInt(conditionType)) {
+                //    case 0: keyValue = $("#acctid").val(); strMsg = "请先选择账户"; break;
+                //    case 1: keyValue = $("#custid").val(); strMsg = "请先选择客户"; break;
+                //    case 2: keyValue = $("#custid").val(); strMsg = "请先选择客户"; break;
+                //    case 3: keyValue = $("#custid").val(); strMsg = "请先选择客户"; break;
+                //}
+                //if (keyValue == "") {
+                //    if (conditionType != 4) {
+                //        this.cancelUpload(file.id);
+                //        $('#' + file.id).remove();
+                //        $.modalAlert(strMsg, 'warning');
+                //    }
+                //}
+            },
+            onUploadSuccess: function (file, data, response) {
+                alert('The file ' + file.name + ' was successfully uploaded with a response of ' + response + ':' + data);
+                $("#txt_filepath").val(file.name);
+                upFilepath = data;
+                scan(file);
+                //$("#" + file.id).find('.uploadify-progress').remove();
+                //$("#" + file.id).find('.data').html(' 恭喜您，上传成功！');
+                //$("#" + file.id).prepend('<a class="succeed" title="成功"><i class="fa fa-check-circle"></i></a>');
+                //top.$.loading(false);
+            },
+            onUploadError: function (file) {
+                alert('The file ' + file.name + ' could not be uploaded: ' + errorString)
+                upFilepath = "";
+                //$("#" + file.id).removeClass('uploadify-error');
+                //$("#" + file.id).find('.uploadify-progress').remove();
+                //$("#" + file.id).find('.data').html(' 很抱歉，上传失败！');
+                //$("#" + file.id).prepend('<span class="error" title="失败"><i class="fa fa-exclamation-circle"></i></span>');
+            }
+        });
+
+        //隐藏上传提示框
+        $("#uploadify-queue").hide();
+    });
+    function gridList() {
+        initcontrol();
+        var $gridList = $("#gridList");
+        $gridList.dataGrid({
+            height: $(window).height() - 162,
+            colModel: [
+                { label: '行号', name: 'RowNo', width: 30, align: 'center' },
+                { label: '错误原因', name: 'ErrorReson', width: 580, align: 'center' },
+                {
+                    label: '操作', name: 'RowNo', width: 100, align: 'center',
+                    formatter(cellvalue) {
+                        return "<a style=\"color:#2196f3;cursor:pointer;text-decoration:none;\" onclick =\"deleterow(" + cellvalue + ")\">删除</a>";
+                    }
+                }
+            ]
+        });
+    }
+    function initcontrol() {
+    }
+    function scan(file) {
+        var keyValue = "";
+        var $gridList = $("#gridList");
+        $gridList.jqGrid('setGridParam', {
+            url: "/BasicManage/Importinfo/GetErrorItemCollection",
+            postData: { filePath: file, className: importType, keyValue: keyValue },
+            loadError: function (xhr, status, error) {//失败
+                $.modalAlert('上传Excel模板格式不正确！', 'warning');
+                isCanImport = false;
+            },
+            loadComplete: function (data) {//成功
+                if (typeof (data.state) != "undefined" && data.state == "error") {
+                    if (typeof (data.message) != "undefined" && data.message != "")
+                        $.modalAlert(data.message, 'warning');
+                    else
+                        $.modalAlert('上传Excel模板格式不正确！', 'warning');
+                    $("#txt_filepath").val("");
+                    isCanImport = false;
+                    return;
+                }
+                var errorCount = data.length;
+                if (errorCount == 0) {
+                    $.modalAlert('上传数据检测完毕,请点击【导入】按钮导入数据！', 'success');
+                    isCanImport = true;
+                } else {
+                    $.modalAlert('上传数据存在错误，请先处理错误！', 'warning');
+                    isCanImport = false;
+                }
+            }
+        }).trigger('reloadGrid');
+    }
+    function clearFile() {
+        $("#txt_filepath").val("");
+    }
+    function sureimport() {
+        //if ($("#txt_filepath").val() == "") {
+        //    $.modalAlert('请先上传导入模板', 'warning');
+        //    return;
+        //}
+        if (!isCanImport) {
+            $.modalAlert('您未进行浏览数据检查或导入数据存在未处理的错误！', 'warning');
+            return;
+        }
+
+        var keyValue = "";
+        var file = upFilepath;
+        $.ajax({
+            url: "/BasicManage/Importinfo/Import",
+            data: { filePath: file, className: importType, keyValue: keyValue },
+            dataType: "json",
+            success: function (data) {
+                if (typeof (data.state) != "undefined" && data.state == "error") {
+                    $.modalAlert(data.message, 'warning');
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                } else {
+                    $.modalAlert("数据导入成功！", 'success');
+                    $.currentWindow().$("#gridList").trigger("reloadGrid");
+                    $.modalClose();
+                }
+            }
+        });
+    }
+    function deleterow(rowno) {
+        var keyValue = "";
+        var file = upFilepath
+        $.ajax({
+            url: "/BasicManage/Importinfo/DeleteRow",
+            data: { filePath: file, rowNo: rowno, className: importType, keyValue: keyValue },
+            dataType: "json",
+            success: function (data) {
+                if (typeof (data.state) != "undefined" && data.state == "error") {
+                    $.modalAlert(data.message, 'warning');
+                } else {
+                    $("#gridList").trigger('reloadGrid');
+                }
+            }
+        });
+    }
+
+</script>
+<div class="topPanel" style="height:125px">
+    <div class="search">
+        <table>
+            <tr>
+                <td id="td_select_list" style="height: 30px;line-height: 30px;">
+                    <div id="select_list" class="input-group" name="acctid" style="width: 200px;margin-right: 2px;">
+                    </div>
+                </td>
+                <td>
+                    <div class="input-group">
+                        <input id="txt_filepath" type="text" class="form-control" placeholder="请选择上传的Excel" style="width: 200px;height: 28px;margin-top: 1px;line-height: 28px;" readonly="readonly" />
+                    </div>
+                </td>
+                <td>
+                    <div class="btn-group" style="margin-left:3px;">
+                        <a><input id="uploadify" name="uploadify" type="file" /></a>
+                    </div>
+                </td>
+                <td>
+                    <div class="btn-group" style="margin-left:3px;margin-right:3px">
+                        <a class="btn btn-primary" onclick="clearFile()">清除</a>
+                    </div>
+                </td>
+                <td>
+                    <div class="btn-group">
+                        <a class="btn btn-primary" onclick="sureimport()">确认导入</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">
+                    <div style="height: 50px;margin-top: -20px;">
+                        <span style="font-weight: bold;color:red;word-wrap: break-word; word-break: normal;display:block;height:18px;">温馨提示：</span>
+                        <span style="font-weight: bold;color:red;word-wrap: break-word; word-break: normal;display:block;height:18px;">1、为了保证您批量操作处理效率，一次性上传指令控制在200条以内</span>
+                        <span style="font-weight: bold;color:red;">
+                            2、为了方便您的批量操作指令，平台提供了模板，请点击
+                            <a id="download_mb" href="" style="color:#2196f3;font-size:15px;cursor:pointer;text-decoration:none;">&nbsp;模板下载</a>
+                        </span>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="gridPanel">
+    <table id="gridList"></table>
+</div>

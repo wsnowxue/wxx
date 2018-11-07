@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+<meta http-equiv="Expires" CONTENT="0">
+<meta http-equiv="Cache-Control" CONTENT="no-cache">
+<meta http-equiv="Pragma" CONTENT="no-cache">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="./common/plugs/bootstrap-3.3.5/css/bootstrap.min.css?rev=5d5357cb3704e1f43a1f5bfed2aebf42"/>
+    <link rel="stylesheet" href="./common/css/font-awesome.min.css?rev=0831cba6a670e405168b84aa20798347"/>
+    <link rel="stylesheet" href="./common/css/animate.min.css?rev=5d2583e9396158551367d33fd389e70f"/>
+    <link rel="stylesheet" href="./common/plugs/layer/skin/layer.css?rev=433a1dd8df8c4851be764e907f6d758a"/>
+    <link rel="stylesheet" href="./common/css/style.min.css?rev=d4c8049be384aaf6e54b99cc876a4d8e"/>
+    <link rel="stylesheet" href="./common/css/login.min.css?rev=0151943e55c500b064a095e7042b001c"/>
+    <title>登录</title>
+  </head>
+  <body>
+  	  <div class="navbar navbar-inverse navbar-fixed-top">
+  	  	 <div class="container">
+  	  	 	   <div class="nav navbar-nav">
+  	  	 	   	   <img src="images/login_logo.png">
+  	  	 	   </div>
+  	  	 	   <div class="nav navbar-nav navbar-right hidden-sm">
+  	  	 	   	   <span>服务热线：0571-87689735</span>
+  	  	 	   </div>
+  	  	 </div>
+  	  </div>
+      <div class="signin">
+      	  <div class="signinpanel">
+			      <div>
+			        <div class="col-sm-8">
+			        	  <!--  	<img src="images/login_left.png">-->
+			        </div>
+			        <div class="col-sm-4">
+			          <form id="loginForm" autocomplete="off">
+			          	<span id="switch"></span>
+			            <div class="login_box">
+			            	<h4 class="no-margins">用户登录</h4>
+			            	<em class="name"></em>
+				            <input type="text" name="userName" placeholder="用户名" class="form-control uname">
+				            <em class="pwd"></em>
+				            <input type="password" name="password" placeholder="请输入密码" class="form-control pword m-b">
+				            <div class="check">
+				            	<i index="0">记住用户名</i>
+				            </div>
+				            <button id="loginBtn" type="button" href="mainReport.html" class="btn btn-success btn-block">登录</button>
+			            </div>
+			            <div class="codeBox hide">
+			            	<img src="images/code.jpg">
+			            		<p>请扫描二维码下载车贷APP</p>
+			            </div>
+			          </form>
+			        </div>
+			      </div>
+			    </div>
+			    <div id="loginError" tabindex="-1" role="dialog" aria-hidden="true" class="modal fade text-muted">
+			      <div class="modal-dialog">
+			        <div class="modal-content">
+			          <div class="modal-header">
+			            <button data-dismiss="modal" aria-hidden="true" type="button" class="close">&times;</button>
+			            <h4 class="modal-title">提示</h4>
+			          </div>
+			          <div class="modal-body">
+			            <h4>登录错误！ <span id="errInfo"></span></h4>
+			          </div>
+			        </div>
+			      </div>
+			    </div>
+      </div>
+  </body>
+</html>
+<script src="common/js/jquery-2.1.1.min.js?rev=6631a779321bc03f4a5281d3ff526254"></script>
+<script src="common/plugs/bootstrap-3.3.5/js/bootstrap.min.js?rev=4becdc9104623e891fbb9d38bba01be4"></script>
+<script src="common/js/jquery.values.js"></script>
+<script src="common/js/jquery.cookie.js"></script>
+<script src="./common/js/URL.js"></script>
+<script src="js/loginReport.js"></script>

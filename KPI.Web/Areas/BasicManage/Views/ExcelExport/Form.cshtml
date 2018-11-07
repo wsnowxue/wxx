@@ -1,0 +1,112 @@
+﻿@{
+    ViewBag.Title = "导出Excel数据";
+    Layout = "~/Views/Shared/_Form.cshtml";
+}
+<script>
+    var gridId = $.request('gridId');
+    var filename = $.request('filename');
+    //alert(filename);
+    $(function () {
+        var columnModel = $.currentWindow().$("#" + gridId).jqGrid('getGridParam', 'colModel');
+        $.each(columnModel, function (i) {
+            var label = columnModel[i].label;
+            var name = columnModel[i].name;
+            var hidden = columnModel[i].hidden;
+            var align = columnModel[i].align;
+            if (!!label && !!align) {
+                $(".sys_spec_text").append("<li data-value='" + name + "' title='" + label + "'><a>" + label + "</a><i></i></li>");
+            }
+        });
+        $(".sys_spec_text li").addClass("active");
+        $(".sys_spec_text li").click(function () {
+            if (!!$(this).hasClass("active")) {
+                $(this).removeClass("active");
+            } else {
+                $(this).addClass("active").siblings("li");
+            }
+        });
+    });
+    //确定导出
+    function AcceptClick() {
+        var exportField = [];
+        $('.sys_spec_text ').find('li.active').each(function () {
+            var value = $(this).attr('data-value');
+            exportField.push(value);
+        });
+        var columnJson = $.currentWindow().$("#" + gridId).jqGrid('getGridParam', 'colModel');
+        var rowJson = $.currentWindow().$("#" + gridId).jqGrid('getRowData');
+        alert(JSON.stringify(columnJson));
+        alert(JSON.stringify(rowJson));
+        $('#executeexcel').remove();
+        var $form = $("<form id='executeexcel' method='post' action='" + top.contentPath + "/Utility/ExecuteExportExcel' style='display:none;'>");
+        var $input = $("<input type='hidden' name='columnJson' value='" + JSON.stringify(columnJson) + "'><input type='hidden' name='rowJson' value='" + JSON.stringify(rowJson) + "'><input type='hidden' name='exportField' value='" + String(exportField) + "'><input type='hidden' name='filename' value='" + escape(filename) + "'>");
+        $("body").append($form);
+        $form.append($input).submit();
+    }
+</script>
+<div style="margin: 5px;">
+    <div class="alert alert-danger" style="margin-bottom: 5px;">
+        <i class="fa fa-question-circle" style="position: relative; top: 1px; font-size: 15px; padding-right: 5px;"></i>
+        注：请勾选需要导出的字段
+    </div>
+</div>
+<div style="margin: 5px;">
+    <ul class="sys_spec_text">
+    </ul>
+</div>
+
+<style>
+    ul {
+    list-style: none;
+}
+    ul, li, h1, h2, h3, h4, h5, h6, dl, dt, dd {
+    padding: 0;
+    margin: 0;
+}
+    ul, menu, dir {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 40px;
+}   
+    .sys_spec_text li.active a {
+    color: #ff5d5b;
+    border: 1px solid #ff5d5b;
+    padding: 0 0px;
+    background: url(../../Content/img/duihao_03.png) right top no-repeat;
+}
+    .sys_spec_text li {
+    position: relative;
+    outline: none;
+    display: inline;
+    float: left;
+    height: 46px;
+    position: relative;
+    margin: 10px 15px 0px 0;
+    outline: none;
+}
+    .sys_spec_text li a {
+    cursor: pointer;
+    vertical-align: middle;
+    text-align: center;
+    word-break: keep-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 39px;
+    line-height: 38px;
+    width: 100px;
+    text-align: center;
+    padding: 0px 0px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    display: inline-block;
+    outline: none;
+    text-decoration: none;
+}
+
+</style>

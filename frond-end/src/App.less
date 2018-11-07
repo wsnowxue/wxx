@@ -1,0 +1,230 @@
+html,body{
+    margin:0px;
+    padding:0px;
+    height: 100%;
+    overflow: hidden;
+}
+html,body,div,ul,li,ol{
+    box-sizing: border-box
+}
+
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: #2c3e50;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fl{float: left;}
+.fr{float: right;}
+.clear:before, .clear:after {content: ""; display: table;}
+.clear:after {clear: both;}
+.clear{*zoom: 1;overflow: hidden;}
+.child-float li{float: left;padding-right: 30px;}
+.disN{display: none!important;}
+.over-hidden{overflow: hidden;}
+.border-right{border-right: solid 1px #e6e6e6}
+ul,ol,li{list-style: none;}
+a{text-decoration: none;color:#000}
+
+// 变量
+.text-center{
+    text-align: center;
+}
+.text-right{
+    text-align: right;
+}
+.sidebg{
+    background: #5e564c;
+}
+.sidecolor{
+    color: #c7c0b6;
+}
+.active-color{
+    color:#333;
+    background: #eee;
+}
+@borderColor:#d8dce5;
+@buttonColor:#b09573;
+@buttonFocusColor:#a2835c;
+@buttonDisabled:#B09586;
+.wid-per-100>span{
+    width: 100%
+}
+
+// 按钮样式
+button.el-button--primary{
+    border-color:@buttonColor;
+    background:@buttonColor;
+    &:focus,&:hover{
+        background:@buttonFocusColor;
+        border-color:@buttonFocusColor;
+    }
+}
+button.el-button--primary.is-disabled,
+button.el-button--primary.is-disabled:hover{
+    border-color:@buttonDisabled;
+    background-color: @buttonDisabled;
+}
+textarea.el-textarea__inner{
+    font-size: inherit;
+}
+// 首个tab不可关闭
+.el-tabs__nav > div:first-child > span{
+    display: none;
+}
+.el-tabs--card>.el-tabs__header .el-tabs__nav{
+    border-top:0px;
+    border-radius: 0
+}
+.el-tabs--card>.el-tabs__header .el-tabs__item.is-active{
+    color:#fff;
+    background-color:@buttonColor;
+}
+
+// 横条，透明
+.main-space{
+    height: 20px;
+    background: transparent;
+}
+// 通用搜索表单域
+.login-container form.el-form{
+    padding-right: 135px;
+    .el-form-item{
+        min-width: 290px;
+    }
+}
+form.el-form{
+    position: relative;
+    .operation{
+        position: absolute;
+        bottom: 18px;
+        width: 30%;
+        right: 0;
+    }
+    .el-form-item{
+        width: 24%;
+        min-width: 320px;
+        margin-right: 0;
+        .el-select{
+            width: 178px;
+        }
+    }
+    .el-form-item.is-success .el-input__inner,
+    .el-form-item.is-success .el-textarea__inner{
+        border-color:@borderColor;
+    }
+    
+}
+// 通用表格样式
+table[class^='el-table']{
+    th,td{
+        .text-center
+    }
+}
+// 通用分页样式
+.el-pagination{
+    .text-center;
+}
+// 通用弹窗样式
+.performance-dialog{
+    form.demo-ruleForm{
+        width: 420px;
+        .el-form-item{
+            width: auto;
+        }
+    } 
+}
+// 通用返回样式
+.back-page{
+    padding:40px
+}
+// 通用表格下的表单
+.follow-table{
+    border:1px solid #e6ebf5;
+    border-top: 0;
+    padding:10px 20px;
+    form.el-form{
+        .el-form-item{
+            width: 100%
+        }
+        .el-form-item.is-success{
+            .el-input__inner,.el-textarea__inner{
+                border-color:@borderColor;
+            }
+        } 
+    }
+}
+.el-form-item.is-success .el-input__validateIcon{
+    display: none;
+}
+.headers{
+    h1{
+        line-height: 60px;
+        font-size: 26px;
+        margin:0;
+        color:@buttonColor
+    }
+}
+
+.page-aside{
+    .sidebg;
+    .el-menu{
+        .sidebg;
+    }
+    .el-submenu__title,.el-submenu__title,.el-menu-item{
+        .sidecolor;
+    }
+    .el-menu-item.is-active,.el-menu-item:focus, .el-menu-item:hover,.el-submenu__title:hover{
+        .active-color
+    }
+}
+.el-input.is-disabled .el-input__inner{
+    background-color: #e7ecf2
+}
+.el-input--small .el-input__inner{
+    line-height: 28px;
+}
+.text_font textarea {
+    font-family: 'Arial';
+}
+#app{
+    .el-input__inner:focus,
+    .el-select .el-input__inner:focus{
+        border-color:@buttonColor
+    }
+    .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner{
+        background-color:@buttonColor;
+        border-color:@buttonColor
+    }
+    .el-button--text,{
+        color:@buttonColor;
+    }
+    .el-button:focus, .el-button:hover{
+        border-color:#d0ba9d;
+        &.el-button--text{
+            border-color: transparent;
+            background-color: transparent
+        }
+        &.el-button--default{
+            background-color: #ece8e2;
+            color:@buttonColor
+        }
+    }
+    .el-checkbox__input.is-checked+.el-checkbox__label{
+        color:@buttonColor
+    }
+    .inline-block{
+        display: inline-block;
+        .el-button--default{
+            font-size: 12px;
+            background: transparent!important
+        }
+    }
+    table .el-upload-list{
+        display: none;
+    }
+}
+
